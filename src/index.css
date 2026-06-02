@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Surfaces — off-white with a barely-there cool tint */
+    --background: 220 25% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    /* Primary — deep navy/indigo: authority, knowledge */
+    --primary: 222 60% 26%;
+    --primary-foreground: 220 25% 98%;
+    --primary-soft: 222 55% 95%;
+
+    /* Accent — academic gold, used sparingly for highlights */
+    --accent: 38 70% 50%;
+    --accent-foreground: 25 60% 15%;
+    --accent-soft: 40 85% 95%;
+
+    /* Secondary surfaces */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 18%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    /* Semantic colors */
+    --success: 158 50% 36%;
+    --success-foreground: 158 60% 96%;
+    --success-soft: 158 45% 94%;
+    --warning: 32 90% 50%;
+    --warning-foreground: 30 60% 15%;
+    --warning-soft: 36 85% 95%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-soft: 0 70% 96%;
+    --info: 210 80% 48%;
+    --info-soft: 210 80% 95%;
+
+    /* Lines & inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 88%;
+    --ring: 222 60% 36%;
+
+    --radius: 0.625rem;
+
+    /* Typography */
+    --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Fraunces', 'Inter', system-ui, serif;
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 220 20% 95%;
+    --card: 222 40% 10%;
+    --card-foreground: 220 20% 95%;
+
+    --primary: 217 75% 65%;
+    --primary-foreground: 222 47% 11%;
+    --primary-soft: 222 40% 18%;
+
+    --accent: 38 75% 60%;
+    --accent-foreground: 25 60% 12%;
+    --accent-soft: 38 30% 18%;
+
+    --secondary: 217 25% 17%;
+    --secondary-foreground: 220 20% 95%;
+    --muted: 217 25% 17%;
+    --muted-foreground: 220 10% 65%;
+
+    --success: 158 55% 50%;
+    --success-foreground: 158 60% 10%;
+    --success-soft: 158 30% 18%;
+    --warning: 35 90% 60%;
+    --warning-foreground: 30 60% 12%;
+    --warning-soft: 35 30% 18%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-soft: 0 30% 20%;
+    --info: 210 80% 60%;
+    --info-soft: 210 30% 20%;
+
+    --border: 217 25% 20%;
+    --input: 217 25% 22%;
+    --ring: 217 75% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    font-family: var(--font-sans), serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display), serif;
+    font-feature-settings: 'ss01', 'ss02';
+    letter-spacing: -0.015em;
+  }
+}
+
+@layer utilities {
+  /* Subtle textured grid for hero/auth panels — evokes notebook paper without being literal */
+  .bg-grid-soft {
+    background-image:
+      linear-gradient(to right, hsl(var(--primary-foreground) / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--primary-foreground) / 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .bg-grid-dots {
+    background-image: radial-gradient(hsl(var(--primary) / 0.07) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  /* Card hover lift */
+  .card-hover {
+    @apply transition-all duration-200;
+  }
+  .card-hover:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 10px 30px -12px hsl(222 47% 11% / 0.12);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* Scrollbar polish */
+  .scroll-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scroll-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+  .scroll-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.4);
+  }
+}

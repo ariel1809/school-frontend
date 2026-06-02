@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"D:\\\\NestJS\\\\school-management\\\\frontend\\\\src\" -Recurse -Force | Where-Object { -not $_.PSIsContainer } | Select-Object FullName | Format-Table -AutoSize -Wrap | Out-String)"
+    ]
+  }
+}
