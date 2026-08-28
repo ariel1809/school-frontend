@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import React from "react";
 
 interface PageHeaderProps {
   title: string;

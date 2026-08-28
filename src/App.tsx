@@ -27,6 +27,7 @@ import { InvoiceDetailPage } from '@/pages/billing/InvoiceDetailPage';
 import { PaymentsListPage } from '@/pages/billing/PaymentsListPage';
 import { SetupWizardPage } from '@/pages/setup/SetupWizardPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
+import React from "react";
 
 function Protected({ children }: { children: React.ReactNode }) {
   const token = useAuthStore((s) => s.accessToken);

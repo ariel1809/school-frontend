@@ -15,6 +15,7 @@ import { Wallet, AlertCircle, FileCheck2, Clock, TrendingUp, ArrowUpRight } from
 import { PageHeader } from '@/components/ui/page-header';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import React from "react";
 
 type Dashboard = {
   revenueThisMonth: number;

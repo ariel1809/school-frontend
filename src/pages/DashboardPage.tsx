@@ -15,6 +15,7 @@ import { useAuthStore } from '@/store/auth';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import React from "react";
 
 type Stat = {
   icon: React.ComponentType<{ className?: string }>;

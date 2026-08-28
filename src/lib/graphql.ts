@@ -29,9 +29,6 @@ export type SortDir = 'ASC' | 'DESC';
 
 export type FilterConditionInput = { field: string; op: FilterOp; value?: string | null; values?: string[] | null };
 export type FilterGroupInput = { op: LogicOp; conditions?: FilterConditionInput[]; groups?: FilterGroupInput[] };
-export type SortInputT = { field: string; direction: SortDir };
-export type PageInputT = { page: number; size: number };
-
 export type PageResult<T> = {
   content: T[];
   page: number;
